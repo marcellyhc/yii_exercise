@@ -4,6 +4,7 @@ services:
 
   frontend:
     build: frontend
+    restart: unless-stopped
     ports:
       - 80:80
     volumes:
@@ -14,6 +15,7 @@ services:
 
   backend:
     build: backend
+    restart: unless-stopped
     ports:
       - 81:80
     volumes:
@@ -24,8 +26,23 @@ services:
 
   mysql:
     image: mysql:5.7
+    restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=example
-      - MYSQL_DATABASE=example
-      - MYSQL_USER=example
-      - MYSQL_PASSWORD=example
+      - MYSQL_ROOT_PASSWORD=fpassword
+      - MYSQL_DATABASE=management
+      - MYSQL_USER=management
+      - MYSQL_PASSWORD=tpassword
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    environment:
+      - PMA_HOST=mysql
+    ports:
+      - 89:80
+    depends_on:
+      - mysql
+
+
+
+  

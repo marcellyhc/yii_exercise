@@ -1,19 +1,3 @@
-# yii console commands
-/yii
-/yii_test
-/yii_test.bat
-
-# phpstorm project files
-.idea
-
-# netbeans project files
-nbproject
-
-# zend studio for eclipse project files
-.buildpath
-.project
-.settings
-
 # windows thumbnail cache
 Thumbs.db
 
@@ -41,3 +25,11 @@ phpunit.phar
 /backend/web/index.php
 /backend/web/index-test.php
 /backend/web/robots.txt
+
+# deployment
+.env
+.idea
+
+
+
+

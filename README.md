@@ -41,16 +41,35 @@ Para instalar e configurar o projeto, siga os passos abaixo:
 
 2. **Rode o Docker-Compose:**
    ```bash
-   docker-compose up
+   docker-compose up -d 
    ```
 
-3. **Acesse a Aplicação:**
-   - Abra o navegador e acesse `http://localhost:8080`.
+3. **Inicie o php dentro do Backend:**
+   ```bash
+   docker exec -it management_system-backend-1
+   php init
+   ```
+   Selecione as opções '1' e, depois, 'yes'.
+   Em seguida digete os comandos:
 
+   ```bash
+   composer install
+   composer update
+   exit
+   ```
+4. **Conectar no phpMyAdmin:**
+   - Abra o navegador e acesse: `http://localhost:89/`.
+   - Usuário: management
+   - senha: tpassword
 
-## Licença
+5. **Importar o Banco de Dados pelo phpMyAdmin:**
+   - Selecione o Banco de Dados `management`.
+   - Selecione a opção `Import`.
+   - Faça o upload do arquivo `management.sql`.
 
-Este projeto está licenciado sob a [MIT License](https://github.com/marcellyhc/yii_exercise/blob/main/LICENSE).
+6. **Acesse a Aplicação:**
+   - Frontend: Abra o navegador e acesse `http://localhost:80`.
+   - Backend: Abra o navegador e acesse `http://localhost:81/`.
 
 ---
 
