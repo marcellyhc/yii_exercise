@@ -46,10 +46,10 @@ Para instalar e configurar o projeto, siga os passos abaixo:
 
 3. **Inicie o php dentro do Backend:**
    ```bash
-   docker exec -it management_system-backend-1
+   docker exec -it yii_exercise-backend-1 /bin/bash
    php init
    ```
-   Selecione as opções '1' e, depois, 'yes'.
+   Selecione as opções '1' e, depois, 'yes'. Se solicitado, sobreescrever usar a opção 'All'.
    Em seguida digete os comandos:
 
    ```bash
@@ -68,8 +68,10 @@ Para instalar e configurar o projeto, siga os passos abaixo:
    - Faça o upload do arquivo `management.sql`.
 
 6. **Acesse a Aplicação:**
-   - Frontend: Abra o navegador e acesse `http://localhost:80`.
+   - Frontend: Abra o navegador e acesse `http://localhost`.
    - Backend: Abra o navegador e acesse `http://localhost:81/`.
+      - Usuário: admin
+      - senha: Passw0rd!
 
 ---
 
